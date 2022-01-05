@@ -2,7 +2,7 @@
 	"name": "@wmg-atlantic-records/fabric",
 	"description": "Object model for HTML5 canvas, and SVG-to-canvas parser. Backed by jsdom and node-canvas.",
 	"homepage": "http://fabricjs.com/",
-	"version": "4.6.3",
+	"version": "4.6.4",
 	"author": "Juriy Zaytsev <kangax@gmail.com>",
 	"contributors": [
 		{
@@ -44,11 +44,12 @@
 	},
 	"license": "MIT",
 	"scripts": {
-		"build": "node build.js modules=ALL requirejs exclude=gestures,accessors,erasing",
+    "build": "node build.js modules=ALL requirejs exclude=gestures,accessors,erasing",
 		"build:fast": "node build.js modules=ALL requirejs fast exclude=gestures,accessors,erasing",
 		"build:watch": "onchange 'src/**/**' 'HEADER.js' 'lib/**/**' -- npm run build_export",
 		"link:watch": "onchange 'src/**/**' 'HEADER.js' 'lib/**/**' -- npm link",
-		"build_with_gestures": "node build.js modules=ALL exclude=accessors",
+		"build_with_eraser": "node build.js modules=ALL requirejs exclude=gestures,accessors",
+    "build_with_gestures": "node build.js modules=ALL exclude=accessors",
 		"build_export": "npm run build:fast && npm run export_dist_to_site",
 		"test:single": "qunit test/node_test_setup.js test/lib",
 		"test:coverage": "nyc --silent qunit test/node_test_setup.js test/lib test/unit",
